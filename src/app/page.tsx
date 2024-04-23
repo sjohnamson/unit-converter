@@ -1,6 +1,7 @@
 "use client";
 
 import Inputs from "./ui/worksheet/inputs";
+import Dropdowns from "./ui/worksheet/dropdowns";
 import React, { useState } from "react";
 
 export default function Home() {
@@ -19,9 +20,7 @@ export default function Home() {
     }));
   };
 
-  const handleCheckButton = () => {
-    
-  }
+  const handleCheckButton = () => {};
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-center p-4 md:p-24">
@@ -33,17 +32,42 @@ export default function Home() {
           value={questionState.inputValue}
           onChange={handleInputChange}
         />
-        <Inputs
+        <Dropdowns
           label="Starting Unit"
-          placeholder="volume or temperature"
           value={questionState.startingUnit}
           onChange={handleInputChange}
+          options={[
+            "Liters",
+            "Tablespoons",
+            "Cubic-Inches",
+            "Cups",
+            "Cubic-Feet",
+            "Gallons",
+            "Celsius",
+            "Kelvin",
+            "Fahrenheit",
+            "Rankine",
+          ]}
         />
-        <Inputs
+        <Dropdowns
           label="Ending Unit"
-          placeholder="volume or temperature"
           value={questionState.endingUnit}
           onChange={handleInputChange}
+          options={
+            questionState.startingUnit === "Celsius" ||
+            questionState.startingUnit === "Kelvin" ||
+            questionState.startingUnit === "Fahrenheit" ||
+            questionState.startingUnit === "Rankine"
+              ? ["Celsius", "Kelvin", "Fahrenheit", "Rankine"]
+              : [
+                  "Liters",
+                  "Tablespoons",
+                  "Cubic-Inches",
+                  "Cups",
+                  "Cubic-Feet",
+                  "Gallons",
+                ]
+          }
         />
         <Inputs
           label="Student Answer"
@@ -53,10 +77,10 @@ export default function Home() {
         />
       </div>
       <div className="mt-5 flex gap-2 md:mt-8 md:gap-4">
-        <button 
+        <button
           className="flex h-10 items-right rounded-lg bg-blue-500 p-2  text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
           onClick={handleCheckButton}
-          >
+        >
           Check Answers
         </button>
       </div>

@@ -1,18 +1,16 @@
+import DropdownsProps from "@/app/lib/definitions"
 
-import InputsProps from "@/app/lib/definitions"
-
-const Inputs: React.FC<InputsProps> = ({label, placeholder}) => {
+const Dropdowns: React.FC<DropdownsProps> = ({label, options }) => {
 return(
 <div className="relative flex flex-1 flex-shrink-0">
-<label htmlFor="Input" className="sr-only">
+<label htmlFor="Dropdown" className="sr-only">
     {label}
 </label>
 <input
   className="peer block w-90 rounded-md border border-gray-200 py-[10px] pl-5 text-sm outline-2 placeholder:text-gray-500"
-  placeholder={placeholder}
 />
 </div>
 
 )}
 
-export default Inputs;
+export default Dropdowns;
