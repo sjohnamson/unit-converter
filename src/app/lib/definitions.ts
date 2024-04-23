@@ -1,15 +1,18 @@
 // Types for the worksheet question inputs
-export default interface InputsProps {
+export interface InputsProps {
     label: string;
     placeholder: string;
-    value: string | number;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value: number;
+    name: string;
+    onChange: (label: string, newInput: number) => void; 
+
   }
 
 // Types for the worksheet dropdown inputs
-export default interface DropdownsProps {
+export interface DropdownsProps {
   label: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  name: string;
+  onChange: (label: string, newInput: string ) => void;
   options: string[];
 }

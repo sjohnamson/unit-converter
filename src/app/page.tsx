@@ -12,11 +12,11 @@ export default function Home() {
     studentAnswer: 0,
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+
+  const handleInputChange = (name: string, value: string | number) => {
     setQuestionState((prevState) => ({
-      ...prevState,
-      [name]: value,
+        ...prevState,
+        [name]: value,
     }));
   };
 
@@ -34,9 +34,11 @@ export default function Home() {
         />
         <Dropdowns
           label="Starting Unit"
+          name="startingUnit"
           value={questionState.startingUnit}
           onChange={handleInputChange}
           options={[
+            "Select starting unit",
             "Liters",
             "Tablespoons",
             "Cubic-Inches",
@@ -51,6 +53,7 @@ export default function Home() {
         />
         <Dropdowns
           label="Ending Unit"
+          name="endingUnit"
           value={questionState.endingUnit}
           onChange={handleInputChange}
           options={
@@ -58,8 +61,9 @@ export default function Home() {
             questionState.startingUnit === "Kelvin" ||
             questionState.startingUnit === "Fahrenheit" ||
             questionState.startingUnit === "Rankine"
-              ? ["Celsius", "Kelvin", "Fahrenheit", "Rankine"]
+              ? ["Select ending unit", "Celsius", "Kelvin", "Fahrenheit", "Rankine"]
               : [
+                  "Select ending unit",
                   "Liters",
                   "Tablespoons",
                   "Cubic-Inches",
