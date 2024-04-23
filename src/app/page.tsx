@@ -2,6 +2,7 @@
 
 import Inputs from "./ui/worksheet/inputs";
 import Dropdowns from "./ui/worksheet/dropdowns";
+import { temperatures, volumes } from "./lib/units";
 import React, { useState } from "react";
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
         {/* returns input fields for the basic question structure */}
         <Inputs
           label="Input Value"
+          name="inputValue"
           placeholder="0"
           value={questionState.inputValue}
           onChange={handleInputChange}
@@ -39,16 +41,8 @@ export default function Home() {
           onChange={handleInputChange}
           options={[
             "Select starting unit",
-            "Liters",
-            "Tablespoons",
-            "Cubic-Inches",
-            "Cups",
-            "Cubic-Feet",
-            "Gallons",
-            "Celsius",
-            "Kelvin",
-            "Fahrenheit",
-            "Rankine",
+            ...temperatures,
+            ...volumes
           ]}
         />
         <Dropdowns
@@ -57,24 +51,14 @@ export default function Home() {
           value={questionState.endingUnit}
           onChange={handleInputChange}
           options={
-            questionState.startingUnit === "Celsius" ||
-            questionState.startingUnit === "Kelvin" ||
-            questionState.startingUnit === "Fahrenheit" ||
-            questionState.startingUnit === "Rankine"
-              ? ["Select ending unit", "Celsius", "Kelvin", "Fahrenheit", "Rankine"]
-              : [
-                  "Select ending unit",
-                  "Liters",
-                  "Tablespoons",
-                  "Cubic-Inches",
-                  "Cups",
-                  "Cubic-Feet",
-                  "Gallons",
-                ]
+            temperatures.includes(questionState.startingUnit)
+              ? ["Select ending unit", ...temperatures]
+              : ["Select ending unit", ...volumes]
           }
         />
         <Inputs
           label="Student Answer"
+          name="studentAnswer"
           placeholder="0"
           value={questionState.studentAnswer}
           onChange={handleInputChange}
