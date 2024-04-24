@@ -1,27 +1,27 @@
 import { QuestionInputs, VolumeConversionFactors, TemperatureConversionFactors } from "./definitions";
 
-// const temperatureConversionFactors: TemperatureConversionFactors = {
-//     'Kelvin': {
-//         'Celsius':,
-//         'Fahrenheit':,
-//         'Rankine':,   
-//     },
-//     'Celsius': {
-//         'Kelvin':,
-//         'Fahrenheit':,
-//         'Rankine':,   
-//     },
-//     'Rankine': {
-//         'Celsius':,
-//         'Fahrenheit':,
-//         'Kelvin':,   
-//     },
-//     'Fahrenheit': {
-//         'Celsius':,
-//         'Kelvin':,
-//         'Rankine':,   
-//     }
-// }
+const temperatureConversionFactors: TemperatureConversionFactors = {
+    'Celsius': {
+        'Fahrenheit': (celsius) => (celsius * 9/5) + 32,
+        'Kelvin': (celsius) => celsius + 273.15,
+        'Rankine': (celsius) => (celsius + 273.15) * 9/5,
+    },
+    'Fahrenheit': {
+        'Celsius': (fahrenheit) => (fahrenheit - 32) * 5/9,
+        'Kelvin': (fahrenheit) => (fahrenheit - 32) * 5/9 + 273.15,
+        'Rankine': (fahrenheit) => fahrenheit + 459.67,
+    },
+    'Kelvin': {
+        'Celsius': (kelvin) => kelvin - 273.15,
+        'Fahrenheit': (kelvin) => (kelvin - 273.15) * 9/5 + 32,
+        'Rankine': (kelvin) => kelvin * 9/5,
+    },
+    'Rankine': {
+        'Celsius': (rankine) => (rankine - 491.67) * 5/9,
+        'Fahrenheit': (rankine) => rankine - 459.67,
+        'Kelvin': (rankine) => rankine * 5/9,
+    }
+};
 
 const volumeConversionFactors: VolumeConversionFactors = {
     'Liters': {
@@ -68,13 +68,14 @@ const volumeConversionFactors: VolumeConversionFactors = {
       },
 };
 
-export function convertTemperature({ inputValue, startingUnit, endingUnit}: QuestionInputs) {
-    if (volumeConversionFactors[startingUnit] && volumeConversionFactors[startingUnit][endingUnit]) {
-      return inputValue * volumeConversionFactors[startingUnit][endingUnit];
+export function convertTemperature({ inputValue, startingUnit, endingUnit }: QuestionInputs) {
+    if (temperatureConversionFactors[startingUnit] && temperatureConversionFactors[startingUnit][endingUnit]) {
+        const conversionFunction = temperatureConversionFactors[startingUnit][endingUnit];
+        return conversionFunction(inputValue);
     } else {
-      throw new Error(`Conversion from ${startingUnit} to ${endingUnit} is not supported.`);
+        throw new Error(`Conversion from ${startingUnit} to ${endingUnit} is not supported.`);
     }
-  };
+};
 
   export function convertVolume({ inputValue, startingUnit, endingUnit}: QuestionInputs) {
     if (volumeConversionFactors[startingUnit] && volumeConversionFactors[startingUnit][endingUnit]) {

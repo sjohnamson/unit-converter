@@ -38,6 +38,6 @@ export interface VolumeConversionFactors {
 
 export interface TemperatureConversionFactors {
     [key: string]: {
-      [key: string]: number;
+      [key: string]: (input: number) => number
     };
   }
