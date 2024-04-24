@@ -13,20 +13,27 @@ export default function Home() {
     endingUnit: "",
     studentAnswer: 0,
   });
-  const [correctAnswer, setCorrectAnswer] = useState("")
-
+  const [correctAnswer, setCorrectAnswer] = useState("");
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false); 
 
   const handleInputChange = (name: string, value: string | number) => {
     setQuestionState((prevState) => ({
-        ...prevState,
-        [name]: value,
+      ...prevState,
+      [name]: value,
     }));
   };
 
   const handleCheckButton = () => {
+    setButtonClicked(true);
+
     temperatures.includes(questionState.startingUnit)
-    ? setCorrectAnswer(convertTemperature(questionState).toFixed(1))
-    : setCorrectAnswer(convertVolume(questionState).toFixed(1));
+      ? setCorrectAnswer(convertTemperature(questionState).toFixed(1))
+      : setCorrectAnswer(convertVolume(questionState).toFixed(1));
+
+    correctAnswer === questionState.studentAnswer.toFixed(1)
+      ? setIsCorrect(true)
+      : setIsCorrect(false);
   };
 
   return (
@@ -45,11 +52,7 @@ export default function Home() {
           name="startingUnit"
           value={questionState.startingUnit}
           onChange={handleInputChange}
-          options={[
-            "Select starting unit",
-            ...temperatures,
-            ...volumes
-          ]}
+          options={["Select starting unit", ...temperatures, ...volumes]}
         />
         <Dropdowns
           label="Ending Unit"
@@ -69,6 +72,18 @@ export default function Home() {
           value={questionState.studentAnswer}
           onChange={handleInputChange}
         />
+        
+        {buttonClicked && (
+          isCorrect ? (
+          <div className="peer block w-90 rounded-md border border-gray-200 py-[10px] pl-5 pr-5 text-sm outline-2 placeholder:text-gray-500">
+            correct
+          </div>
+        ) : (
+          <div className="peer block w-90 rounded-md border border-gray-200 py-[10px] pl-5 pr-5 text-sm outline-2 placeholder:text-gray-500">
+            incorrect
+          </div>
+        )
+        )}
       </div>
       <div className="mt-5 flex gap-2 md:mt-8 md:gap-4">
         <button

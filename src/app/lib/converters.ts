@@ -1,70 +1,70 @@
 import { questionInputs, VolumeConversionFactors, TemperatureConversionFactors } from "./definitions";
 
 // const temperatureConversionFactors: TemperatureConversionFactors = {
-//     'kelvin': {
-//         'celsius':,
-//         'fahrenheit':,
-//         'rankine':,   
+//     'Kelvin': {
+//         'Celsius':,
+//         'Fahrenheit':,
+//         'Rankine':,   
 //     },
-//     'celsius': {
-//         'kelvin':,
-//         'fahrenheit':,
-//         'rankine':,   
+//     'Celsius': {
+//         'Kelvin':,
+//         'Fahrenheit':,
+//         'Rankine':,   
 //     },
-//     'rankine': {
-//         'celsius':,
-//         'fahrenheit':,
-//         'kelvin':,   
+//     'Rankine': {
+//         'Celsius':,
+//         'Fahrenheit':,
+//         'Kelvin':,   
 //     },
-//     'fahrenheit': {
-//         'celsius':,
-//         'kelvin':,
-//         'rankine':,   
+//     'Fahrenheit': {
+//         'Celsius':,
+//         'Kelvin':,
+//         'Rankine':,   
 //     }
 // }
 
 const volumeConversionFactors: VolumeConversionFactors = {
     'Liters': {
         'Tablespoons': 67.628,
-        'cubic-inches': 61.024,
-        'cups': 4.22675,
-        'cubic-feet': 0.0353147,
-        'gallons': 0.264172,
+        'Cubic-Inches': 61.024,
+        'Cups': 4.22675,
+        'Cubic-Feet': 0.0353147,
+        'Gallons': 0.264172,
       },
-      'tablespoons': {
-        'liters': 0.0147868,
-        'cubic-inches': 0.902344,
-        'cups': 0.0625,
-        'cubic-feet': 0.000522189,
-        'gallons': 0.00390625,
+      'Tablespoons': {
+        'Liters': 0.0147868,
+        'Cubic-Inches': 0.902344,
+        'Cups': 0.0625,
+        'Cubic-Feet': 0.000522189,
+        'Gallons': 0.00390625,
       },
-      'cubic-inches': {
-        'liters': 0.0163871,
-        'tablespoons': 1.10823,
-        'cups': 0.0692641,
-        'cubic-feet': 0.000578704,
-        'gallons': 0.004329,
+      'Cubic-Inches': {
+        'Liters': 0.0163871,
+        'Tablespoons': 1.10823,
+        'Cups': 0.0692641,
+        'Cubic-Feet': 0.000578704,
+        'Gallons': 0.004329,
       },
-      'cups': {
-        'liters': 0.236588,
-        'tablespoons': 16,
-        'cubic-inches': 14.4375,
-        'cubic-feet': 0.00835503,
-        'gallons': 0.0625,
+      'Cups': {
+        'Liters': 0.236588,
+        'Tablespoons': 16,
+        'Cubic-Inches': 14.4375,
+        'Cubic-Feet': 0.00835503,
+        'Gallons': 0.0625,
       },
-      'cubic-feet': {
-        'liters': 28.3168,
-        'tablespoons': 1915.01,
-        'cubic-inches': 1728,
-        'cups': 119.688,
-        'gallons': 7.48052,
+      'Cubic-Feet': {
+        'Liters': 28.3168,
+        'Tablespoons': 1915.01,
+        'Cubic-Inches': 1728,
+        'Cups': 119.688,
+        'Gallons': 7.48052,
       },
-      'gallons': {
-        'liters': 3.78541,
-        'tablespoons': 256,
-        'cubic-inches': 231,
-        'cups': 15.7725,
-        'cubic-feet': 0.133681,
+      'Gallons': {
+        'Liters': 3.78541,
+        'Tablespoons': 256,
+        'Cubic-Inches': 231,
+        'Cups': 15.7725,
+        'Cubic-Feet': 0.133681,
       },
 };
 
