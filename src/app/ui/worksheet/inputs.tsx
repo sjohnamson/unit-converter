@@ -18,7 +18,7 @@ const Inputs: React.FC<InputsProps> = ({
     isNaN(value) ? "border-red-400" : "border-gray-300";
 
     const textColor =
-    isNaN(value) ? "text-red-400" : "text-gray-300";
+    isNaN(value) ? "text-red-400" : "text-black-300";
 
   return (
     <div className="relative flex flex-1 flex-shrink-0">

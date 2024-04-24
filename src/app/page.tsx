@@ -15,8 +15,8 @@ export default function Home() {
     studentAnswer: 0,
   });
 
+  const [isValid, setIsValid] = useState(true);
   const [isCorrect, setIsCorrect] = useState(false);
-  const [isValid, setIsValid] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false); 
 
   const handleInputChange = (name: string, value: string | number) => {
@@ -28,6 +28,10 @@ export default function Home() {
 
 const handleCheckButton = () => {
   setButtonClicked(true);
+  if (isNaN(questionState.inputValue) || isNaN(questionState.studentAnswer) ) {
+    setIsValid(false);
+    return
+  } 
 
   let answer;
   if (temperatures.includes(questionState.startingUnit)) {
@@ -81,8 +85,10 @@ const handleCheckButton = () => {
         />
 {/* result is displayed after "check answers" button is clicked */}
         <Results
+        isValid={isValid}
           isCorrect={isCorrect}
           buttonClicked={buttonClicked}
+
         />
         
       </div>

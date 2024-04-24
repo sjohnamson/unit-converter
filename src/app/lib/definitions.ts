@@ -17,6 +17,7 @@ export interface DropdownsProps {
     }
     
 export interface ResultsProps {
+    isValid: boolean,
     isCorrect: boolean,
     buttonClicked: boolean,
     }
