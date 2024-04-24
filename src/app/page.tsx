@@ -2,6 +2,7 @@
 
 import Inputs from "./ui/worksheet/inputs";
 import Dropdowns from "./ui/worksheet/dropdowns";
+import Results from "./ui/worksheet/results";
 import { convertTemperature, convertVolume } from "./lib/converters";
 import { temperatures, volumes } from "./lib/units";
 import React, { useState } from "react";
@@ -13,7 +14,6 @@ export default function Home() {
     endingUnit: "",
     studentAnswer: 0,
   });
-  const [correctAnswer, setCorrectAnswer] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false); 
 
@@ -24,17 +24,19 @@ export default function Home() {
     }));
   };
 
-  const handleCheckButton = () => {
-    setButtonClicked(true);
+const handleCheckButton = () => {
+  setButtonClicked(true);
 
-    temperatures.includes(questionState.startingUnit)
-      ? setCorrectAnswer(convertTemperature(questionState).toFixed(1))
-      : setCorrectAnswer(convertVolume(questionState).toFixed(1));
+  let answer;
+  if (temperatures.includes(questionState.startingUnit)) {
+    answer = convertTemperature(questionState).toFixed(1);
+  } else {
+    answer = convertVolume(questionState).toFixed(1);
+  }
 
-    correctAnswer === questionState.studentAnswer.toFixed(1)
-      ? setIsCorrect(true)
-      : setIsCorrect(false);
-  };
+  const isAnswerCorrect = answer === questionState.studentAnswer.toFixed(1);
+  setIsCorrect(isAnswerCorrect);
+};
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-center p-4 md:p-24">
@@ -72,18 +74,12 @@ export default function Home() {
           value={questionState.studentAnswer}
           onChange={handleInputChange}
         />
+{/* result is displayed after "check answers" button is clicked */}
+        <Results
+          isCorrect={isCorrect}
+          buttonClicked={buttonClicked}
+        />
         
-        {buttonClicked && (
-          isCorrect ? (
-          <div className="peer block w-90 rounded-md border border-gray-200 py-[10px] pl-5 pr-5 text-sm outline-2 placeholder:text-gray-500">
-            correct
-          </div>
-        ) : (
-          <div className="peer block w-90 rounded-md border border-gray-200 py-[10px] pl-5 pr-5 text-sm outline-2 placeholder:text-gray-500">
-            incorrect
-          </div>
-        )
-        )}
       </div>
       <div className="mt-5 flex gap-2 md:mt-8 md:gap-4">
         <button

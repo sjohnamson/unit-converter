@@ -1,4 +1,4 @@
-import { questionInputs, VolumeConversionFactors, TemperatureConversionFactors } from "./definitions";
+import { QuestionInputs, VolumeConversionFactors, TemperatureConversionFactors } from "./definitions";
 
 // const temperatureConversionFactors: TemperatureConversionFactors = {
 //     'Kelvin': {
@@ -68,7 +68,7 @@ const volumeConversionFactors: VolumeConversionFactors = {
       },
 };
 
-export function convertTemperature({ inputValue, startingUnit, endingUnit}: questionInputs) {
+export function convertTemperature({ inputValue, startingUnit, endingUnit}: QuestionInputs) {
     if (volumeConversionFactors[startingUnit] && volumeConversionFactors[startingUnit][endingUnit]) {
       return inputValue * volumeConversionFactors[startingUnit][endingUnit];
     } else {
@@ -76,7 +76,7 @@ export function convertTemperature({ inputValue, startingUnit, endingUnit}: ques
     }
   };
 
-  export function convertVolume({ inputValue, startingUnit, endingUnit}: questionInputs) {
+  export function convertVolume({ inputValue, startingUnit, endingUnit}: QuestionInputs) {
     if (volumeConversionFactors[startingUnit] && volumeConversionFactors[startingUnit][endingUnit]) {
       return inputValue * volumeConversionFactors[startingUnit][endingUnit];
     } else {
