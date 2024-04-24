@@ -5,7 +5,6 @@ export interface InputsProps {
     value: number;
     name: string;
     onChange: (label: string, newInput: number) => void; 
-
   }
 
 // Types for the worksheet dropdown inputs
@@ -16,3 +15,23 @@ export interface DropdownsProps {
   onChange: (label: string, newInput: string ) => void;
   options: string[];
 }
+
+// Types for question object
+export interface questionInputs {
+    inputValue: number,
+    startingUnit: string,
+    endingUnit: string,
+    studentAnswer: number,
+}
+
+export interface VolumeConversionFactors {
+    [key: string]: {
+      [key: string]: number;
+    };
+  }
+
+  export interface TemperatureConversionFactors {
+    [key: string]: {
+      [key: string]: number;
+    };
+  }

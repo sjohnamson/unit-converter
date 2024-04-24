@@ -2,6 +2,7 @@
 
 import Inputs from "./ui/worksheet/inputs";
 import Dropdowns from "./ui/worksheet/dropdowns";
+import { convertTemperature, convertVolume } from "./lib/converters";
 import { temperatures, volumes } from "./lib/units";
 import React, { useState } from "react";
 
@@ -12,6 +13,7 @@ export default function Home() {
     endingUnit: "",
     studentAnswer: 0,
   });
+  const [correctAnswer, setCorrectAnswer] = useState("")
 
 
   const handleInputChange = (name: string, value: string | number) => {
@@ -21,7 +23,11 @@ export default function Home() {
     }));
   };
 
-  const handleCheckButton = () => {};
+  const handleCheckButton = () => {
+    temperatures.includes(questionState.startingUnit)
+    ? setCorrectAnswer(convertTemperature(questionState).toFixed(1))
+    : setCorrectAnswer(convertVolume(questionState).toFixed(1));
+  };
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-center p-4 md:p-24">

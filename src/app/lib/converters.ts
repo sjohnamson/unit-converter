@@ -1,29 +1,31 @@
-const temperatureConversionFactors = {
-    'kelvin': {
-        'celsius':,
-        'fahrenheit':,
-        'rankine':,   
-    },
-    'celsius': {
-        'kelvin':,
-        'fahrenheit':,
-        'rankine':,   
-    },
-    'rankine': {
-        'celsius':,
-        'fahrenheit':,
-        'kelvin':,   
-    },
-    'fahrenheit': {
-        'celsius':,
-        'kelvin':,
-        'rankine':,   
-    }
-}
+import { questionInputs, VolumeConversionFactors, TemperatureConversionFactors } from "./definitions";
 
-const volumeConversionFactors = {
-    'liters': {
-        'tablespoons': 67.628,
+// const temperatureConversionFactors: TemperatureConversionFactors = {
+//     'kelvin': {
+//         'celsius':,
+//         'fahrenheit':,
+//         'rankine':,   
+//     },
+//     'celsius': {
+//         'kelvin':,
+//         'fahrenheit':,
+//         'rankine':,   
+//     },
+//     'rankine': {
+//         'celsius':,
+//         'fahrenheit':,
+//         'kelvin':,   
+//     },
+//     'fahrenheit': {
+//         'celsius':,
+//         'kelvin':,
+//         'rankine':,   
+//     }
+// }
+
+const volumeConversionFactors: VolumeConversionFactors = {
+    'Liters': {
+        'Tablespoons': 67.628,
         'cubic-inches': 61.024,
         'cups': 4.22675,
         'cubic-feet': 0.0353147,
@@ -66,10 +68,18 @@ const volumeConversionFactors = {
       },
 };
 
-export default function convertUnit(value, startUnit, endUnit) {
-    if (volumeConversionFactors[startUnit] && volumeConversionFactors[startUnit][endUnit]) {
-      return value * volumeConversionFactors[startUnit][endUnit];
+export function convertTemperature({ inputValue, startingUnit, endingUnit}: questionInputs) {
+    if (volumeConversionFactors[startingUnit] && volumeConversionFactors[startingUnit][endingUnit]) {
+      return inputValue * volumeConversionFactors[startingUnit][endingUnit];
     } else {
-      throw new Error(`Conversion from ${startUnit} to ${endUnit} is not supported.`);
+      throw new Error(`Conversion from ${startingUnit} to ${endingUnit} is not supported.`);
+    }
+  };
+
+  export function convertVolume({ inputValue, startingUnit, endingUnit}: questionInputs) {
+    if (volumeConversionFactors[startingUnit] && volumeConversionFactors[startingUnit][endingUnit]) {
+      return inputValue * volumeConversionFactors[startingUnit][endingUnit];
+    } else {
+      throw new Error(`Conversion from ${startingUnit} to ${endingUnit} is not supported.`);
     }
   }
