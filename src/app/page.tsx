@@ -21,7 +21,7 @@ export default function Home() {
   ]);
 
   const handleInputChange = (
-    rowIndex,
+    rowIndex: number,
     name: string,
     value: string | number
   ) => {
@@ -89,7 +89,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen items-center justify-center p-4 md:p-24">
+    <main className="flex flex-col min-h-screen items-center justify-center p-2 md:p-24">
       {questionsState.map(
         (
           {
@@ -105,8 +105,11 @@ export default function Home() {
         ) => (
           <div
             key={rowIndex}
-            className="mt-5 flex flex-col items-center gap-2 md:mt-8 md:flex-row md:gap-4"
+            className="mt-2 flex flex-col items-center gap-1 md:mt-2 md:flex-row md:gap-2"
           >
+            <div>
+              {rowIndex + 1}
+            </div>
             {/* returns input fields for the basic question structure */}
             <Inputs
               label="Input Value"

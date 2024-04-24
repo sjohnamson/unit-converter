@@ -26,7 +26,7 @@ const Inputs: React.FC<InputsProps> = ({
         {label}
       </label>
       <input
-        className={`peer block w-[125px] h-[40px] rounded-md border ${borderColor} ${textColor} py-[10px] pl-5 text-sm outline-2 placeholder:text-gray-500`}
+        className={`peer block w-[125px] h-[40px] rounded-md border ${borderColor} ${textColor} py-[5px] pl-5 text-sm outline-2 placeholder:text-gray-500`}
         placeholder={placeholder}
         onChange={handleChange}
       />
