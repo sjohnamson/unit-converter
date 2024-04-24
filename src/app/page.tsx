@@ -47,6 +47,15 @@ export default function Home() {
     ]);
   };
 
+  const removeRow = () => {
+    setQuestionsState((prevState) => {
+      if (prevState.length > 1) {
+        return prevState.slice(0, -1);
+      }
+      return prevState;
+   });
+  }
+
   const handleCheckButton = () => {
     setQuestionsState((prevState) =>
       prevState.map((questionState) => {
@@ -153,15 +162,21 @@ export default function Home() {
       <div className="mt-5 flex gap-2 md:mt-8 md:gap-4">
         <button
           className="flex h-10 items-right rounded-lg bg-blue-500 p-2  text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
+          onClick={addRow}
+        >
+          Add Row
+        </button>
+        <button
+          className="flex h-10 items-right rounded-lg bg-blue-500 p-2  text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
           onClick={handleCheckButton}
         >
           Check Answers
         </button>
         <button
           className="flex h-10 items-right rounded-lg bg-blue-500 p-2  text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
-          onClick={addRow}
+          onClick={removeRow}
         >
-          Add Row
+          Remove Row
         </button>
       </div>
     </main>
