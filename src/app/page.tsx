@@ -14,7 +14,9 @@ export default function Home() {
     endingUnit: "",
     studentAnswer: 0,
   });
+
   const [isCorrect, setIsCorrect] = useState(false);
+  const [isValid, setIsValid] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false); 
 
   const handleInputChange = (name: string, value: string | number) => {
@@ -61,10 +63,13 @@ const handleCheckButton = () => {
           name="endingUnit"
           value={questionState.endingUnit}
           onChange={handleInputChange}
-          options={
+          options={questionState.startingUnit ? (
             temperatures.includes(questionState.startingUnit)
               ? ["Select ending unit", ...temperatures]
               : ["Select ending unit", ...volumes]
+          ) : (
+            ["Select ending unit"]
+          )
           }
         />
         <Inputs

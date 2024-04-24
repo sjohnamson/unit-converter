@@ -11,7 +11,7 @@ return(
     {label}
 </label>
 <select
-  className="peer block w-90 rounded-md border border-gray-300 py-[10px] pl-5 text-sm outline-2 placeholder:text-gray-500"
+  className="peer block w-[160px] h-[40px] rounded-md border border-gray-300 py-[10px] pl-[5px] pr-[5px] text-sm outline-2 placeholder:text-gray-500"
   value={value}
   onChange={handleChange}
 >
