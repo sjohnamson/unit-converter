@@ -1,11 +1,13 @@
 "use client";
 
+import React, { useState } from "react";
 import Inputs from "./ui/worksheet/inputs";
 import Dropdowns from "./ui/worksheet/dropdowns";
 import Results from "./ui/worksheet/results";
-import { convertTemperature, convertVolume } from "./lib/converters";
 import { temperatures, volumes } from "./lib/units";
-import React, { useState } from "react";
+import CheckAnswerButton from "./ui/worksheet/buttons/check-answers";
+import AddRowButton from "./ui/worksheet/buttons/add-row";
+import RemoveRowButton from "./ui/worksheet/buttons/remove-row";
 
 export default function Home() {
   const [questionsState, setQuestionsState] = useState([
@@ -32,64 +34,11 @@ export default function Home() {
     });
   };
 
-  const addRow = () => {
-    setQuestionsState((prevState) => [
-      ...prevState,
-      {
-        inputValue: 0,
-        startingUnit: "Starting Unit",
-        endingUnit: "Ending Unit",
-        studentAnswer: 0,
-        isValid: true,
-        isCorrect: false,
-        buttonClicked: false,
-      },
-    ]);
-  };
-
-  const removeRow = () => {
-    setQuestionsState((prevState) => {
-      if (prevState.length > 1) {
-        return prevState.slice(0, -1);
-      }
-      return prevState;
-   });
-  }
-
-  const handleCheckButton = () => {
-    setQuestionsState((prevState) =>
-      prevState.map((questionState) => {
-        const { inputValue, startingUnit, endingUnit, studentAnswer } =
-          questionState;
-        let isValid = true;
-        let isCorrect = false;
-        let buttonClicked = true;
-
-        if (
-          isNaN(inputValue) ||
-          isNaN(studentAnswer) ||
-          startingUnit === "Starting Unit" ||
-          endingUnit === "Ending Unit"
-        ) {
-          isValid = false;
-          return { ...questionState, isValid, isCorrect, buttonClicked };
-        }
-
-        let answer;
-        if (temperatures.includes(startingUnit)) {
-          answer = convertTemperature(questionState).toFixed(1);
-        } else {
-          answer = convertVolume(questionState).toFixed(1);
-        }
-
-        isCorrect = answer === studentAnswer.toFixed(1);
-        return { ...questionState, isValid, isCorrect, buttonClicked };
-      })
-    );
-  };
-
   return (
-    <main className="flex flex-col min-h-screen items-center justify-center p-2 md:p-24">
+    <main className="flex flex-col min-h-screen items-center justify-center p-2 md:p-10">
+      <header className="text-green-700 text-lg p-2 md:p-5">
+        UNIT CONVERTER
+      </header>
       {questionsState.map(
         (
           {
@@ -107,9 +56,7 @@ export default function Home() {
             key={rowIndex}
             className="mt-2 flex flex-col items-center gap-1 md:mt-2 md:flex-row md:gap-2"
           >
-            <div>
-              {rowIndex + 1}
-            </div>
+            <div>{rowIndex + 1}</div>
             {/* returns input fields for the basic question structure */}
             <Inputs
               label="Input Value"
@@ -163,24 +110,9 @@ export default function Home() {
         )
       )}
       <div className="mt-5 flex gap-2 md:mt-8 md:gap-4">
-        <button
-          className="flex h-10 items-right rounded-lg bg-blue-500 p-2  text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
-          onClick={addRow}
-        >
-          Add Row
-        </button>
-        <button
-          className="flex h-10 items-right rounded-lg bg-blue-500 p-2  text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
-          onClick={handleCheckButton}
-        >
-          Check Answers
-        </button>
-        <button
-          className="flex h-10 items-right rounded-lg bg-blue-500 p-2  text-sm font-medium text-white transition-colors hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 active:bg-blue-600 aria-disabled:cursor-not-allowed aria-disabled:opacity-50"
-          onClick={removeRow}
-        >
-          Remove Row
-        </button>
+        <AddRowButton setQuestionsState={setQuestionsState} />
+        <RemoveRowButton setQuestionsState={setQuestionsState} />
+        <CheckAnswerButton setQuestionsState={setQuestionsState} />
       </div>
     </main>
   );
