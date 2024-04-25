@@ -17,17 +17,17 @@ export interface DropdownsProps {
     }
     
 export interface ResultsProps {
-    isValid: boolean,
-    isCorrect: boolean,
-    buttonClicked: boolean,
+    isValid: boolean;
+    isCorrect: boolean;
+    buttonClicked: boolean;
     }
 
 // Types for question object
 export interface QuestionInputs {
-    inputValue: number,
-    startingUnit: string,
-    endingUnit: string,
-    studentAnswer: number,
+    inputValue: number;
+    startingUnit: string;
+    endingUnit: string;
+    studentAnswer: number;
 }
 
 export interface VolumeConversionFactors {
@@ -40,4 +40,12 @@ export interface TemperatureConversionFactors {
     [key: string]: {
       [key: string]: (input: number) => number
     };
+  }
+
+  export interface ButtonProps {
+    text: string;
+    onClick: () => void; 
+    bgColor: string; 
+    hoverBG: string; 
+    activeBG: string
   }

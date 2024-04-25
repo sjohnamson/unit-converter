@@ -38,6 +38,6 @@ export default function CheckAnswerButton({setQuestionsState}) {
       };
 
     return (
-        <Button text="Check Answers" onClick={handleCheckButton} />
+        <Button text="Check Answers" onClick={handleCheckButton} bgColor="bg-blue-500" hoverBG="hover:bg-blue-400" activeBG="active:bg-blue-600"/>
     );
   }

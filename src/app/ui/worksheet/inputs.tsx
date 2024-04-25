@@ -11,8 +11,6 @@ const Inputs: React.FC<InputsProps> = ({
     const newInput = parseFloat(e.target.value);
     onChange(name, newInput);
   };
-
-  console.log('value is:', typeof value)
   // Conditionally change field color based on whether or not input is valid
   const borderColor =
     isNaN(value) ? "border-red-400" : "border-gray-300";
@@ -26,7 +24,7 @@ const Inputs: React.FC<InputsProps> = ({
         {label}
       </label>
       <input
-        className={`peer block w-[125px] h-[40px] rounded-md border ${borderColor} ${textColor} py-[5px] pl-5 text-sm outline-2 placeholder:text-gray-500`}
+        className={`w-[125px] h-[40px] rounded-md border ${borderColor} ${textColor} py-[5px] pl-5 text-sm outline-2 placeholder:text-gray-500`}
         placeholder={placeholder}
         onChange={handleChange}
       />

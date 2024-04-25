@@ -19,6 +19,6 @@ export default function AddRowButton({setQuestionsState}) {
       };
 
     return (
-        <Button text="Add Row" onClick={handleAddRowButton} />
+        <Button text="Add Row" onClick={handleAddRowButton} bgColor="bg-green-600" hoverBG="hover:bg-green-500" activeBG="active:bg-green-700" />
     );
   }

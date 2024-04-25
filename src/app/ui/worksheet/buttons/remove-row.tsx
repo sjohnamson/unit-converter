@@ -12,6 +12,6 @@ export default function RemoveRowButton({setQuestionsState}) {
       };
 
     return (
-        <Button text="Remove Row" onClick={handleRemoveRowButton} />
+        <Button text="Remove Row" onClick={handleRemoveRowButton} bgColor="bg-orange-600" hoverBG="hover:bg-orange-500" activeBG="active:bg-orange-700"/>
     );
   }
