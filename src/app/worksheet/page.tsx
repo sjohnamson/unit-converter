@@ -8,9 +8,10 @@ import { temperatures, volumes } from "../lib/units";
 import CheckAnswerButton from "../ui/worksheet/buttons/check-answers";
 import AddRowButton from "../ui/worksheet/buttons/add-row";
 import RemoveRowButton from "../ui/worksheet/buttons/remove-row";
+import { QuestionInputs } from "../lib/definitions";
 
 export default function Page() {
-  const [questionsState, setQuestionsState] = useState([
+  const [questionsState, setQuestionsState] = useState<QuestionInputs[]>([
     {
       inputValue: 0,
       startingUnit: "Starting Unit",
@@ -24,7 +25,7 @@ export default function Page() {
 
   const handleInputChange = (
     rowIndex: number,
-    name: string,
+    name:  keyof QuestionInputs,
     value: string | number
   ) => {
     setQuestionsState((prevState) => {

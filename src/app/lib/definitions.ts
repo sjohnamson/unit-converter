@@ -24,10 +24,14 @@ export interface ResultsProps {
 
 // Types for question object
 export interface QuestionInputs {
+  [key: string]: string | number | boolean;
     inputValue: number;
     startingUnit: string;
     endingUnit: string;
     studentAnswer: number;
+    isValid: boolean;
+    isCorrect: boolean;
+    buttonClicked: boolean;
 }
 
 export interface VolumeConversionFactors {
