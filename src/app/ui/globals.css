@@ -2,14 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-
-}
 
 @media (prefers-color-scheme: dark) {
-  :root {
 
-  }
 }
 
 body {
@@ -26,4 +21,16 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  header {
+    color: #2f855a; 
+    font-size: 1.125rem;  
+    padding:  1rem; 
+  }
+}
+
+header {
+  color: 'green-700'; 
+  font-size: lg; 
+  padding: 2; 
+  md: p-5
 }
