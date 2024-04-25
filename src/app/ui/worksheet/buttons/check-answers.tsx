@@ -44,9 +44,10 @@ export default function CheckAnswerButton({
     <Button
       text="Check Answers"
       onClick={handleCheckButton}
-      bgColor="bg-blue-500"
-      hoverBG="hover:bg-blue-400"
-      activeBG="active:bg-blue-600"
+      bgColor="bg-blue-800"
+      hoverBG="hover:bg-blue-700"
+      activeBG="active:bg-blue-900"
+      textColor="text-white"
     />
   );
 }

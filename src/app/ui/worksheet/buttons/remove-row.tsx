@@ -19,9 +19,10 @@ export default function RemoveRowButton({
     <Button
       text="Remove Row"
       onClick={handleRemoveRowButton}
-      bgColor="bg-orange-600"
-      hoverBG="hover:bg-orange-500"
-      activeBG="active:bg-orange-700"
+      bgColor="bg-amber-200"
+      hoverBG="hover:bg-amber-300"
+      activeBG="active:bg-amber-100"
+      textColor="text-black"
     />
   );
 }

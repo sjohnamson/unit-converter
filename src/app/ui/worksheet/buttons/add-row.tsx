@@ -25,9 +25,10 @@ export default function AddRowButton({
     <Button
       text="Add Row"
       onClick={handleAddRowButton}
-      bgColor="bg-green-600"
-      hoverBG="hover:bg-green-500"
-      activeBG="active:bg-green-700"
+      bgColor="bg-sky-200"
+      hoverBG="hover:bg-sky-300"
+      activeBG="active:bg-sky-100"
+      textColor="text-black"
     />
   );
 }

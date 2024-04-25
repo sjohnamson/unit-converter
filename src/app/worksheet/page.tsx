@@ -141,7 +141,7 @@ export default function Page() {
         )
       )}
       </div>
-      <div className="mt-5 flex gap-2 md:mt-8 md:gap-4">
+      <div className="mt-2 flex gap-2 md:mt-5 md:gap-4">
         <CheckAnswerButton setQuestionsState={setQuestionsState} />
       </div>
     </main>

@@ -51,5 +51,6 @@ export interface TemperatureConversionFactors {
     onClick: () => void; 
     bgColor: string; 
     hoverBG: string; 
-    activeBG: string
+    activeBG: string;
+    textColor: string;
   }
