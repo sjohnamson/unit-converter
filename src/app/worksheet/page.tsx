@@ -11,6 +11,7 @@ import RemoveRowButton from "../ui/worksheet/buttons/remove-row";
 import { QuestionInputs } from "../lib/definitions";
 
 export default function Page() {
+    // sets state for each row/questions
   const [questionsState, setQuestionsState] = useState<QuestionInputs[]>([
     {
       inputValue: 0,
@@ -23,6 +24,7 @@ export default function Page() {
     },
   ]);
 
+//   Updates question state as inputs are entered
   const handleInputChange = (
     rowIndex: number,
     name:  keyof QuestionInputs,
@@ -42,7 +44,8 @@ export default function Page() {
         <AddRowButton setQuestionsState={setQuestionsState} />
         <RemoveRowButton setQuestionsState={setQuestionsState} />
       </div>
-      <div className="border border-blue-400 m-2 p-3 md:m-4 md:p-5">
+      <div className="border border-blue-400 m-2 p-3 md:m-4 md:p-5"> 
+      {/* Adds headers for the question rows, hidden when screen isn't md or larger */}
       <div className="hidden md:flex md:items-center md:flex-row md:gap-2">
         <div className="peer block w-[10px] h-[20px] text-sm">#</div>
         <div className="peer block w-[125px] h-[20px] text-sm">Input Value</div>
@@ -55,6 +58,7 @@ export default function Page() {
         </div>
         <div className="peer block w-[125px] h-[20px] text-sm">Result</div>
       </div>
+      {/* Maps over questionsState to create a row for each object */}
       {questionsState.map(
         (
           {
@@ -142,6 +146,7 @@ export default function Page() {
       )}
       </div>
       <div className="mt-2 flex gap-2 md:mt-5 md:gap-4">
+        {/* Calculates result for all questions */}
         <CheckAnswerButton setQuestionsState={setQuestionsState} />
       </div>
     </main>
