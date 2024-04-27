@@ -39,7 +39,7 @@ export default function Page() {
 
   return (
     <main className="flex flex-col min-h-screen items-center p-2 md:p-10 ">
-      <header>UNIT CONVERTER</header>
+      <header><h1>UNIT CONVERTER</h1></header>
       <div className="mt-3 flex gap-2 md:mt-5 md:gap-3">
         <AddRowButton setQuestionsState={setQuestionsState} />
         <RemoveRowButton setQuestionsState={setQuestionsState} />
