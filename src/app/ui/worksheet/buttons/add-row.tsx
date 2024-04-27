@@ -13,6 +13,7 @@ export default function AddRowButton({
         inputValue: 0,
         startingUnit: "Starting Unit",
         endingUnit: "Ending Unit",
+        correctAnswer: 0,
         studentAnswer: 0,
         isValid: true,
         isCorrect: false,
