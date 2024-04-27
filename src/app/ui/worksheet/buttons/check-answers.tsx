@@ -11,7 +11,7 @@ export default function CheckAnswerButton({
   const handleCheckButton = () => {
     setQuestionsState((prevState) =>
       prevState.map((questionState) => {
-        const { inputValue, startingUnit, endingUnit, studentAnswer } =
+        let { inputValue, startingUnit, endingUnit, correctAnswer, studentAnswer } =
           questionState;
         let isValid = true;
         let isCorrect = false;
@@ -34,8 +34,9 @@ export default function CheckAnswerButton({
           answer = convertVolume(questionState).toFixed(1);
         }
 
+        correctAnswer = parseFloat(answer);
         isCorrect = answer === studentAnswer.toFixed(1);
-        return { ...questionState, isValid, isCorrect, buttonClicked };
+        return { ...questionState, correctAnswer, isValid, isCorrect, buttonClicked };
       })
     );
   };
