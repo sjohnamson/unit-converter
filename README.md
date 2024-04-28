@@ -17,7 +17,7 @@ To run Unit Converter locally:
 
 ## Features
 
-- Create and check volume and temperature unit conversion question by entering in beginnng values, starting units, ending units, and student answers
+- Create and check volume and temperature unit conversion questions by entering in beginnng values, starting units, ending units, and student answers
 - Add and remove question rows
 - Button click to verify student answers in all question rows simultaneously
 
