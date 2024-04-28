@@ -49,7 +49,7 @@ export default function Page() {
       <div className="border border-blue-400 m-2 p-3 md:m-4 md:p-5">
         {/* Adds headers for the question rows, hidden when screen isn't md or larger */}
         <div className="hidden md:flex md:items-center md:flex-row md:gap-2">
-          <div className="peer block w-[10px] h-[20px] text-sm">#</div>
+          <div className="peer block w-[25px] h-[20px] text-sm">#</div>
           <div className="peer block w-[125px] h-[20px] text-sm">
             Input Value
           </div>
@@ -86,7 +86,7 @@ export default function Page() {
               key={rowIndex}
               className="mt-2 flex flex-col items-center gap-1 md:mt-2 md:flex-row md:gap-2"
             >
-              <div>{rowIndex + 1}</div>
+              <div className="w-[20px]">{rowIndex + 1}</div>
               {/* returns input fields for the basic question structure */}
               <div className="flex flex-row gap-1 md:flex-col md:gap-2">
                 <div className="text-sm w-[60px] md:hidden">Input Value</div>
