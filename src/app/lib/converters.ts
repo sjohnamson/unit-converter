@@ -63,7 +63,7 @@ const volumeConversionFactors: VolumeConversionFactors = {
         'Liters': 3.78541,
         'Tablespoons': 256,
         'Cubic-Inches': 231,
-        'Cups': 15.7725,
+        'Cups': 16,
         'Cubic-Feet': 0.133681,
       },
 };
