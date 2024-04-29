@@ -102,7 +102,13 @@ export default function Page() {
                   onChange={(name, value) =>
                     handleInputChange(rowIndex, name, value)
                   }
-                  options={["Starting Unit", ...temperatures, ...volumes]}
+                  options={
+                    endingUnit === "Ending Unit"
+                    ? ["Starting Unit", ...temperatures, ...volumes]
+                      : temperatures.includes(endingUnit)
+                        ? ["Starting Unit", ...temperatures.filter(unit => unit !== endingUnit)]
+                        : ["Starting Unit", ...volumes.filter(unit => unit !== endingUnit)]
+                  }
                 />
               </div>
               <div className="flex flex-row gap-2 md:flex-col">
@@ -115,11 +121,11 @@ export default function Page() {
                     handleInputChange(rowIndex, name, value)
                   }
                   options={
-                    startingUnit
-                      ? temperatures.includes(startingUnit)
-                        ? ["Ending Unit", ...temperatures]
-                        : ["Ending Unit", ...volumes]
-                      : ["Ending Unit"]
+                    startingUnit === "Starting Unit"
+                    ? ["Ending Unit", ...temperatures, ...volumes]
+                      : temperatures.includes(startingUnit)
+                        ? ["Ending Unit", ...temperatures.filter(unit => unit !== startingUnit)]
+                        : ["Ending Unit", ...volumes.filter(unit => unit !== startingUnit)]
                   }
                 />
               </div>
