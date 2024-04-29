@@ -1,12 +1,6 @@
 
-
 ## Unit Converter  
-
-## Screenshots
-  <div style="display:flex; justify-content:space-between;">
-      <img src="/src/images/PM%20Screen1.png" style="width:50%;" alt= Screenshot1>
-      <img src="/src/images/PM%20Screen2.png" style="width:49%" alt= Screenshot2>
-  </div>
+Unit Converter is an app to enter and correct unit conversion questions from an assigned worksheet
 
 ## Installation
 Unit Converter is deployed through Vercel at: https://unit-converter-smoky.vercel.app/
