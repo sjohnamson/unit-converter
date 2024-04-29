@@ -1,3 +1,4 @@
+import React from "react";
 import { ButtonProps } from "../lib/definitions";
 
 export default function Button({

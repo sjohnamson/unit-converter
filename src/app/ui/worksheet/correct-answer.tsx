@@ -1,4 +1,5 @@
-import { CorrectAnswerProps } from "@/app/lib/definitions";
+import React from "react";
+import { CorrectAnswerProps } from "../../lib/definitions";
 
 const CorrectAnswer: React.FC<CorrectAnswerProps> = ({
   correctAnswer,
