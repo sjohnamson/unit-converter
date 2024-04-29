@@ -8,6 +8,7 @@ Unit Converter is deployed through Vercel at: https://unit-converter-smoky.verce
 To run Unit Converter locally:
 1. Open up Unit Converter with your editor of choice and run an `npm install`
 2. Run `npm run dev` in your terminal
+3. Open http://localhost:3000/ in your browser
 
 ## Features
 

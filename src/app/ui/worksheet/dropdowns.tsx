@@ -1,4 +1,5 @@
-import { DropdownsProps } from "@/app/lib/definitions";
+import React from "react";
+import { DropdownsProps } from "../../lib/definitions";
 
 const Dropdowns: React.FC<DropdownsProps> = ({
   label,

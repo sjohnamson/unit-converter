@@ -1,4 +1,5 @@
-import { ResultsProps } from "@/app/lib/definitions";
+import React from "react";
+import { ResultsProps } from "../../lib/definitions";
 
 const Results: React.FC<ResultsProps> = ({
   isValid,

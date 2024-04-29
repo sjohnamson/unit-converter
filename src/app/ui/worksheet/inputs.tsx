@@ -1,4 +1,5 @@
-import { InputsProps } from "@/app/lib/definitions";
+import React from "react";
+import { InputsProps } from "../../lib/definitions";
 
 const Inputs: React.FC<InputsProps> = ({
   label,
