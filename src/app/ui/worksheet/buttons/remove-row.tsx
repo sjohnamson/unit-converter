@@ -1,5 +1,6 @@
+import React from "react";
 import Button from "../../button";
-import { QuestionInputs } from "@/app/lib/definitions";
+import { QuestionInputs } from "../../../lib/definitions";
 
 export default function RemoveRowButton({
   setQuestionsState,

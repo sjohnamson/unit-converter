@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@media (prefers-color-scheme: dark) {
-
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

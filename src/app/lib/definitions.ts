@@ -19,7 +19,6 @@ export interface InputsProps {
   onChange: (label: string, newInput: number) => void;
 }
 
-// Types for the worksheet dropdown inputs
 export interface DropdownsProps {
   label: string;
   value: string;
