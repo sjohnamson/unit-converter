@@ -31,9 +31,13 @@ To run Unit Converter locally:
 - Discuss with the client the possibility of changing the unit conversion calculation from the current in app hard coded solution to an API
     - Benefits would primarily be flexibility if questions changed
     - Drawbacks would be the volatility of using an outside API, and potentially a slow down in performance
-- Create a database and a login so that users can modify and save individual worksheets
+- Create a database 
+    - Create a login page so users specific data
+    - Allow users to save created worksheets so that they can return to them later
+- Create a field to enter in and save a student's worksheet results so they could be compiled and compared
 - Alter the remove row function so that it removes individual targeted rows instead of only the bottom row
 - Add a feature to duplicate rows 
+- If staying with hard coded conversion computations move them to the database and add a page for users to add additional units
 
 
 ## Author
