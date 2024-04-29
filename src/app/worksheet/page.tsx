@@ -84,6 +84,7 @@ export default function Page() {
           ) => (
             <div
               key={rowIndex}
+              data-testid="question-row"
               className="mt-2 flex flex-col items-center gap-1 md:mt-2 md:flex-row md:gap-2"
             >
               <div>{rowIndex + 1}</div>
