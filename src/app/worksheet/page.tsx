@@ -41,7 +41,9 @@ export default function Page() {
 
   return (
     <main className="flex flex-col min-h-screen items-center p-5 md:p-10 ">
-      <header><h1>UNIT CONVERTER</h1></header>
+      <header>
+        <h1>UNIT CONVERTER</h1>
+      </header>
       <div className="mt-3 flex gap-2 md:mt-5 md:gap-3">
         <AddRowButton setQuestionsState={setQuestionsState} />
         <RemoveRowButton setQuestionsState={setQuestionsState} />
@@ -50,21 +52,11 @@ export default function Page() {
         {/* Adds headers for the question rows, hidden when screen isn't md or larger */}
         <div className="hidden md:flex md:items-center md:flex-row md:gap-2">
           <div className="block w-[25px] h-[20px] text-sm">#</div>
-          <div className="block w-[120px] h-[20px] text-sm">
-            Input Value
-          </div>
-          <div className="block w-[120px] h-[20px] text-sm">
-            Starting Unit
-          </div>
-          <div className="block w-[120px] h-[20px] text-sm">
-            Ending Unit
-          </div>
-          <div className="block w-[120px] h-[20px] text-sm">
-            Student Answer
-          </div>
-          <div className="block w-[120px] h-[20px] text-sm">
-            Correct Answer
-          </div>
+          <div className="block w-[120px] h-[20px] text-sm">Input Value</div>
+          <div className="block w-[120px] h-[20px] text-sm">Starting Unit</div>
+          <div className="block w-[120px] h-[20px] text-sm">Ending Unit</div>
+          <div className="block w-[120px] h-[20px] text-sm">Student Answer</div>
+          <div className="block w-[120px] h-[20px] text-sm">Correct Answer</div>
           <div className="block w-[120px] h-[20px] text-sm">Result</div>
         </div>
         {/* Maps over questionsState to create a row for each object */}

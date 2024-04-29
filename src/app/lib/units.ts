@@ -1,15 +1,10 @@
 export const volumes = [
-    "Liters",
-    "Tablespoons",
-    "Cubic-Inches",
-    "Cups",
-    "Cubic-Feet",
-    "Gallons"
+  "Liters",
+  "Tablespoons",
+  "Cubic-Inches",
+  "Cups",
+  "Cubic-Feet",
+  "Gallons",
 ];
 
-export const temperatures = [
-    "Celsius", 
-    "Kelvin", 
-    "Fahrenheit", 
-    "Rankine"
-]
+export const temperatures = ["Celsius", "Kelvin", "Fahrenheit", "Rankine"];

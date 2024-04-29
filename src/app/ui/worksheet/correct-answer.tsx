@@ -1,10 +1,10 @@
 import { CorrectAnswerProps } from "@/app/lib/definitions";
 
 const CorrectAnswer: React.FC<CorrectAnswerProps> = ({
-    correctAnswer,
-    isValid,
-    buttonClicked,
-  }) => {
+  correctAnswer,
+  isValid,
+  buttonClicked,
+}) => {
   return (
     <div
       className={`w-[120px] h-[40px] rounded-md border border-gray-300 text-gray-700 py-[10px] pl-5 pr-5 text-sm placeholder:text-gray-500`}
