@@ -7,6 +7,7 @@ export default function AddRowButton({
   setQuestionsState: React.Dispatch<React.SetStateAction<QuestionInputs[]>>;
 }) {
   const handleAddRowButton = () => {
+    //Add row to the questionState array with starting values
     setQuestionsState((prevState) => [
       ...prevState,
       {

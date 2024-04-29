@@ -7,7 +7,7 @@ const Results: React.FC<ResultsProps> = ({
 }) => {
   const getResultDiv = (text: string, border: string, color: string) => (
     <div
-      className={`w-[125px] h-[40px] text-center rounded-md border ${border} ${color} py-[10px] pl-5 pr-5 text-sm outline-2 placeholder:text-gray-500`}
+      className={`w-[120px] h-[40px] text-center rounded-md border ${border} ${color} py-[10px] pl-5 pr-5 text-sm placeholder:text-gray-500`}
     >
       {text}
     </div>
