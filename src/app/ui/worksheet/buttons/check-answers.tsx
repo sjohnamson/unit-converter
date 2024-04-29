@@ -1,7 +1,8 @@
+import React from "react"; 
 import Button from "../../button";
-import { temperatures } from "@/app/lib/units";
-import { convertTemperature, convertVolume } from "@/app/lib/converters";
-import { QuestionInputs } from "@/app/lib/definitions";
+import { temperatures } from "../../../lib/units";
+import { convertTemperature, convertVolume } from "../../../lib/converters";
+import { QuestionInputs } from "../../../lib/definitions";
 
 export default function CheckAnswerButton({
   setQuestionsState,

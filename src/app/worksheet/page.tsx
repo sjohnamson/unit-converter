@@ -77,7 +77,7 @@ export default function Page() {
             <div
               key={rowIndex}
               data-testid="question-row"
-              className="mt-2 flex flex-col items-center gap-1 md:mt-2 md:flex-row md:gap-2"
+              className="mt-2 flex flex-col items-center gap-1 pl-7 pr-7 md:pl-0 md:pr-0 md:mt-2 md:flex-row md:gap-2"
             >
               <div className="w-[20px]">{rowIndex + 1}</div>
               {/* returns input fields for the basic question structure */}
