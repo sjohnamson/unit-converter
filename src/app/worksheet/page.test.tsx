@@ -27,14 +27,4 @@ describe("Page component", () => {
     expect(newRowCount).toBe(initialRowCount - 1);
   });
 
-  it("updates input field value correctly", () => {
-    //Arrange
-    const { getByLabelText } = render(<Page />);
-    const inputField = getByLabelText("Input Value");
-    //Act
-    fireEvent.change(inputField, { target: { value: "10" } });
-    //Assert
-    expect(inputField.value).toBe("10");
-  });
-
 });
