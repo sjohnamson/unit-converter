@@ -10,6 +10,13 @@ export interface QuestionInputs {
   isCorrect: boolean;
   buttonClicked: boolean;
 }
+
+export interface ConversionInputs {
+  inputValue: number;
+  startingUnit: string;
+  endingUnit: string;
+}
+
 // Types for the worksheet question inputs
 export interface InputsProps {
   label: string;

@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../button";
 import { temperatures } from "../../../lib/units";
 import { convertTemperature, convertVolume } from "../../../lib/converters";
-import { QuestionInputs } from "../../../lib/definitions";
+import { ConversionInputs, QuestionInputs } from "../../../lib/definitions";
 
 export default function CheckAnswerButton({
   setQuestionsState,
@@ -23,6 +23,7 @@ export default function CheckAnswerButton({
         let isValid = true;
         let isCorrect = false;
         let buttonClicked = true;
+
         // Check that all fields have been entered
         if (
           isNaN(inputValue) ||
@@ -34,11 +35,12 @@ export default function CheckAnswerButton({
           return { ...questionState, isValid, isCorrect, buttonClicked };
         }
         // Find the correct answer to the tenths place
+        const conversionInputs: ConversionInputs = {inputValue, startingUnit, endingUnit};
         let answer;
         if (temperatures.includes(startingUnit)) {
-          answer = convertTemperature(questionState).toFixed(1);
+          answer = convertTemperature(conversionInputs).toFixed(1);
         } else {
-          answer = convertVolume(questionState).toFixed(1);
+          answer = convertVolume(conversionInputs).toFixed(1);
         }
         // Convert answer to a number
         correctAnswer = parseFloat(answer);

@@ -1,5 +1,5 @@
 import {
-  QuestionInputs,
+  ConversionInputs,
 } from "./definitions";
 import { temperatureConversionFactors, volumeConversionFactors } from "./units";
 
@@ -9,7 +9,7 @@ export function convertTemperature({
   inputValue,
   startingUnit,
   endingUnit,
-}: QuestionInputs) {
+}: ConversionInputs) {
   if (
     temperatureConversionFactors[startingUnit] &&
     temperatureConversionFactors[startingUnit][endingUnit]
@@ -28,7 +28,7 @@ export function convertVolume({
   inputValue,
   startingUnit,
   endingUnit,
-}: QuestionInputs) {
+}: ConversionInputs) {
   if (
     volumeConversionFactors[startingUnit] &&
     volumeConversionFactors[startingUnit][endingUnit]
