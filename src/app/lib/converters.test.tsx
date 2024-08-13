@@ -3,9 +3,7 @@ import { convertTemperature, convertVolume } from "./converters";
 
 describe("Temperature conversions", () => {
     it('should convert correctly from Celsius to the other units', () => {
-        //Arrange
-        const celsiusValue = 100; // This will be the input value to test
-        // Expected conversions to other temperature units
+        const celsiusValue = 100; 
         const expectedConversions = {
           Fahrenheit: 212,
           Kelvin: 373.15,
@@ -18,21 +16,13 @@ describe("Temperature conversions", () => {
               inputValue: celsiusValue,
               startingUnit: 'Celsius',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
       });
 
       it('should convert correctly from Fahrenheit to the other units', () => {
-        //Arrange
-        const fahrenheitValue = 100; // This will be the input value to test
-        // Expected conversions to other temperature units
+        const fahrenheitValue = 100; 
         const expectedConversions = {
           Celsius: 37.78,
           Kelvin: 310.93,
@@ -45,21 +35,13 @@ describe("Temperature conversions", () => {
               inputValue: fahrenheitValue,
               startingUnit: 'Fahrenheit',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
       });
 
       it('should convert correctly from Kelvin to the other units', () => {
-        //Arrange
-        const kelvinValue = 100; // This will be the input value to test
-        // Expected conversions to other temperature units
+        const kelvinValue = 100; 
         const expectedConversions = {
           Fahrenheit: -279.67,
           Celsius: -173.15,
@@ -72,21 +54,13 @@ describe("Temperature conversions", () => {
               inputValue: kelvinValue,
               startingUnit: 'Kelvin',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
       });
 
       it('should convert correctly from Rankine to the other units', () => {
-        //Arrange
-        const rankineValue = 100; // This will be the input value to test
-        // Expected conversions to other temperature units
+        const rankineValue = 100; 
         const expectedConversions = {
           Fahrenheit: -359.67,
           Kelvin: 55.56,
@@ -99,23 +73,26 @@ describe("Temperature conversions", () => {
               inputValue: rankineValue,
               startingUnit: 'Rankine',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
+      });
+
+      it('should throw an error if conversionInputs are not correct', () => {
+        const conversionInputs = { inputValue: 32, startingUnit: 'Dogs', endingUnit: 'Fahrenheit' };
+        const expected = '89.6';
+
+          expect(() => {
+            convertTemperature(conversionInputs);
+          }).toThrow(
+            new Error(`Conversion from ${conversionInputs.startingUnit} to ${conversionInputs.endingUnit} is not supported.`)
+          );
       });
   });
 
   describe("Volume conversions", () => {
     it('should convert correctly from Liters to the other units', () => {
-        //Arrange
-        const litersValue = 100; // This will be the input value to test
-        // Expected conversions to other volume units
+        const litersValue = 100; 
         const expectedConversions = {
             Tablespoons: 6762.8,
             'Cubic-Inches': 6102.4,
@@ -130,21 +107,13 @@ describe("Temperature conversions", () => {
               inputValue: litersValue,
               startingUnit: 'Liters',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
       });
 
       it('should convert correctly from Tablespoons to the other units', () => {
-        //Arrange
-        const tablespoonsValue = 100; // This will be the input value to test
-        // Expected conversions to other volume units
+        const tablespoonsValue = 100; 
         const expectedConversions = {
             Liters: 1.48,
             'Cubic-Inches': 90.23,
@@ -159,21 +128,13 @@ describe("Temperature conversions", () => {
               inputValue: tablespoonsValue,
               startingUnit: 'Tablespoons',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
       });
 
       it('should convert correctly from Cubic Inches to the other units', () => {
-        //Arrange
-        const cubicInchesValue = 100; // This will be the input value to test
-        // Expected conversions to other volume units
+        const cubicInchesValue = 100; 
         const expectedConversions = {
             Tablespoons: 110.82,
             Liters: 1.64,
@@ -188,21 +149,13 @@ describe("Temperature conversions", () => {
               inputValue: cubicInchesValue,
               startingUnit: 'Cubic-Inches',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
       });
 
       it('should convert correctly from Cups to the other units', () => {
-        //Arrange
-        const cupsValue = 100; // This will be the input value to test
-        // Expected conversions to other volume units
+        const cupsValue = 100; 
         const expectedConversions = {
             Tablespoons: 1600,
             'Cubic-Inches': 1443.75,
@@ -217,21 +170,13 @@ describe("Temperature conversions", () => {
               inputValue: cupsValue,
               startingUnit: 'Cups',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
       });
 
       it('should convert correctly from Cubic Feet to the other units', () => {
-        //Arrange
-        const cubicFeetValue = 100; // This will be the input value to test
-        // Expected conversions to other volume units
+        const cubicFeetValue = 100; 
         const expectedConversions = {
             Tablespoons: 191501,
             'Cubic-Inches': 172800,
@@ -246,21 +191,13 @@ describe("Temperature conversions", () => {
               inputValue: cubicFeetValue,
               startingUnit: 'Cubic-Feet',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
       });
 
       it('should convert correctly from Gallons to the other units', () => {
-        //Arrange
-        const gallonsValue = 100; // This will be the input value to test
-        // Expected conversions to other volume units
+        const gallonsValue = 100; 
         const expectedConversions = {
             Tablespoons: 25600,
             'Cubic-Inches': 23100,
@@ -275,15 +212,20 @@ describe("Temperature conversions", () => {
               inputValue: gallonsValue,
               startingUnit: 'Gallons',
               endingUnit,
-            //   Not using these inputs, but they fulfill the typescript req.
-              correctAnswer: 0, 
-              studentAnswer: 0,
-              isValid: true,
-              isCorrect: false,
-              buttonClicked: false,
             });
           expect(result).toBeCloseTo(expectedValue);
         });
+      });
+
+      it('should throw an error if conversionInputs are not correct', () => {
+        const conversionInputs = { inputValue: 32, startingUnit: 'Cats', endingUnit: 'Gallons' };
+        const expected = '89.6';
+
+          expect(() => {
+            convertTemperature(conversionInputs);
+          }).toThrow(
+            new Error(`Conversion from ${conversionInputs.startingUnit} to ${conversionInputs.endingUnit} is not supported.`)
+          );
       });
 
   });
