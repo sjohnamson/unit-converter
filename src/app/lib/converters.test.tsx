@@ -80,7 +80,6 @@ describe("Temperature conversions", () => {
 
       it('should throw an error if conversionInputs are not correct', () => {
         const conversionInputs = { inputValue: 32, startingUnit: 'Dogs', endingUnit: 'Fahrenheit' };
-        const expected = '89.6';
 
           expect(() => {
             convertTemperature(conversionInputs);
@@ -219,7 +218,6 @@ describe("Temperature conversions", () => {
 
       it('should throw an error if conversionInputs are not correct', () => {
         const conversionInputs = { inputValue: 32, startingUnit: 'Cats', endingUnit: 'Gallons' };
-        const expected = '89.6';
 
           expect(() => {
             convertTemperature(conversionInputs);
